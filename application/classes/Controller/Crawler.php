@@ -7,7 +7,9 @@ class Controller_Crawler extends Controller
 {
     public function action_index()
     {
-        $content = View::factory('crawler/index')->set('links', array());
+        $pages = ORM::factory('Page')->find_all();
+
+        $content = View::factory('crawler/index')->set('pages', $pages);
         $this->response->body($content);
     }
 
@@ -23,7 +25,7 @@ class Controller_Crawler extends Controller
                 $page = ORM::factory('Page');
                 $page->url = $url;
                 $page->body = $body;
-                $page->save();
+                $page->create();
             } catch (RequestException $e) {
             }
         }
