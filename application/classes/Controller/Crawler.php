@@ -18,7 +18,12 @@ class Controller_Crawler extends Controller
             $client = new Client();
             try {
                 $response = $client->get($url);
-                var_dump((string)$response->getBody());
+                $body = (string)$response->getBody();
+                /** @var Model_Page $page */
+                $page = ORM::factory('Page');
+                $page->url = $url;
+                $page->body = $body;
+                $page->save();
             } catch (RequestException $e) {
             }
         }
