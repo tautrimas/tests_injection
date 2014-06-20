@@ -140,3 +140,6 @@ Route::set('default', '(<controller>(/<action>(/<id>)))')
 		'controller' => 'welcome',
 		'action'     => 'index',
 	));
+
+/** @noinspection PhpIncludeInspection */
+require APPPATH . '../vendor/autoload.php';

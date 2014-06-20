@@ -1,5 +1,8 @@
 <?php
 
+use GuzzleHttp\Client;
+use GuzzleHttp\Exception\RequestException;
+
 class Controller_Crawler extends Controller
 {
     public function action_index()
@@ -12,6 +15,12 @@ class Controller_Crawler extends Controller
     {
         if ($this->request->post()) {
             $url = $this->request->post('url');
+            $client = new Client();
+            try {
+                $response = $client->get($url);
+                var_dump((string)$response->getBody());
+            } catch (RequestException $e) {
+            }
         }
 
         $content = View::factory('crawler/crawl');
