@@ -2,7 +2,6 @@
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\RequestException;
-use Symfony\Component\CssSelector\Parser\Parser;
 use Symfony\Component\DomCrawler\Crawler;
 
 class Controller_Crawler extends Controller
@@ -11,7 +10,15 @@ class Controller_Crawler extends Controller
     {
         $pages = ORM::factory('Page')->find_all();
 
-        $content = View::factory('crawler/index')->set('pages', $pages);
+        $content = View::factory('crawler/list')->set('pages', $pages);
+        $this->response->body($content);
+    }
+
+    public function action_recent()
+    {
+        $pages = ORM::factory('Page')->limit(3)->find_all();
+
+        $content = View::factory('crawler/list')->set('pages', $pages);
         $this->response->body($content);
     }
 
