@@ -6,6 +6,16 @@ use Symfony\Component\DomCrawler\Crawler;
 
 class Controller_Crawler extends Controller
 {
+    /**
+     * @var \GuzzleHttp\ClientInterface
+     */
+    protected $container;
+
+    public function before()
+    {
+        $this->container = \App\DependencyInjection\ContainerSingleton::get();
+    }
+
     public function action_index()
     {
         $pages = ORM::factory('Page')->order_by('id', 'desc')->find_all();

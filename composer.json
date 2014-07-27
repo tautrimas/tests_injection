@@ -4,6 +4,13 @@
         "phing/phing": "dev-master",
         "guzzlehttp/guzzle": "~4.0",
         "symfony/dom-crawler": "~2.5",
-        "symfony/css-selector": "~2.5"
+        "symfony/css-selector": "~2.5",
+        "symfony/dependency-injection": "~2.5",
+        "symfony/config": "~2.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "application/classes/"
+        }
     }
 }
