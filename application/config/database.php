@@ -4,7 +4,7 @@ return array
 (
 	'default' => array
 	(
-		'type'       => 'MySQL',
+		'type'       => 'PDO',
 		'connection' => array(
 			/**
 			 * The following options are available for MySQL:
@@ -18,8 +18,9 @@ return array
 			 *
 			 * Ports and sockets may be appended to the hostname.
 			 */
-			'hostname'   => 'localhost',
-			'database'   => 'workshop_testing',
+            'dsn' => 'mysql:host=localhost;dbname=workshop_testing',
+//			'hostname'   => 'localhost',
+//			'database'   => 'workshop_testing',
 			'username'   => 'root',
 			'password'   => 'rootslaptazodis',
 			'persistent' => FALSE,
