@@ -11,21 +11,13 @@
 
     <filter>
         <whitelist>
-            <directory>./</directory>
-            <exclude>
-                <directory>./Tests</directory>
-                <directory>./Command</directory>
-                <directory>./vendor</directory>
-                <directory>./Resources</directory>
-            </exclude>
+            <directory>./classes</directory>
         </whitelist>
     </filter>
 
     <logging>
-        <log type="coverage-html" target="tests/app/build/coverage" title="Coverage" charset="UTF-8" yui="true"
+        <log type="coverage-html" target="../coverage" title="Coverage" charset="UTF-8" yui="true"
              highlight="true"/>
-        <log type="coverage-clover" target="Tests/app/build/logs/clover.xml"/>
-        <log type="junit" target="Tests/app/build/logs/junit.xml" logIncompleteSkipped="false"/>
         <log type="coverage-text" target="php://stdout" showOnlySummary="true"/>
     </logging>
 
