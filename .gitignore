@@ -1,4 +1,5 @@
-/vendor
-/.idea
-/application/logs
+/vendor/
+/.idea/
+/application/logs/
 /adminer.php
+/coverage/
