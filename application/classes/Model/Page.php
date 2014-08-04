@@ -6,5 +6,6 @@ class Model_Page extends ORM
         'id' => null,
         'url' => null,
         'body' => null,
+        'lang' => null,
     );
 }
