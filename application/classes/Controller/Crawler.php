@@ -109,8 +109,7 @@ class Controller_Crawler extends Controller
             $languageScores[$language] = $dotProduct / ($lengthSubject * $lengthTarget);
         }
 
-        var_dump($languageScores);
-        sort($languageScores);
+        arsort($languageScores);
         $matchedLanguage = array_keys($languageScores)[0];
 
         return $matchedLanguage;
