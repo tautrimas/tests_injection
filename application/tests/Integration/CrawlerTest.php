@@ -29,7 +29,7 @@ class CrawlerTest extends IntegrationTestCase
         $response = $request->execute();
         $crawler = new Crawler($response->body());
 //        var_dump($response->body());
-        $listItems = $crawler->filter('ul.page-list > li');
+        $listItems = $crawler->filter('.page-list tbody tr');
         $this->assertCount(1, $listItems);
         $linkText = $listItems->first()->filter('a')->text();
         $this->assertSame($url, trim($linkText));

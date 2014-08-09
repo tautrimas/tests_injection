@@ -8,7 +8,7 @@ casper.test.begin('Url submitting', 2, function suite(test) {
     });
 
     casper.thenOpen('http://workshop-revive.local/crawler/index', function () {
-        test.assertExists('ul.page-list a[href="' + url + '"]', 'Link must exist');
+        test.assertExists('.page-list a[href="' + url + '"]', 'Link must exist');
     });
 
     casper.run(function () {
