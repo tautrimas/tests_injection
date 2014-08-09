@@ -10,16 +10,18 @@ class Controller_Crawler extends Controller
     {
         $pages = ORM::factory('Page')->order_by('id', 'desc')->find_all();
 
-        $content = View::factory('crawler/list')->set('pages', $pages);
-        $this->response->body($content);
+        $template = View::factory('common/template');
+        $template->body = View::factory('crawler/list')->set('pages', $pages);
+        $this->response->body($template);
     }
 
     public function action_recent()
     {
         $pages = ORM::factory('Page')->order_by('id', 'desc')->limit(3)->find_all();
 
-        $content = View::factory('crawler/list')->set('pages', $pages);
-        $this->response->body($content);
+        $template = View::factory('common/template');
+        $template->body = View::factory('crawler/list')->set('pages', $pages);
+        $this->response->body($template);
     }
 
     public function action_crawl()
@@ -51,8 +53,9 @@ class Controller_Crawler extends Controller
             }
         }
 
-        $content = View::factory('crawler/crawl');
-        $this->response->body($content);
+        $template = View::factory('common/template');
+        $template->body = View::factory('crawler/crawl');
+        $this->response->body($template);
     }
 
     /**
