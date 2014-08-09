@@ -8,7 +8,7 @@ class Controller_Crawler extends Controller
 {
     public function action_index()
     {
-        $pages = ORM::factory('Page')->find_all();
+        $pages = ORM::factory('Page')->order_by('id', 'desc')->find_all();
 
         $content = View::factory('crawler/list')->set('pages', $pages);
         $this->response->body($content);
@@ -16,7 +16,7 @@ class Controller_Crawler extends Controller
 
     public function action_recent()
     {
-        $pages = ORM::factory('Page')->limit(3)->find_all();
+        $pages = ORM::factory('Page')->order_by('id', 'desc')->limit(3)->find_all();
 
         $content = View::factory('crawler/list')->set('pages', $pages);
         $this->response->body($content);
