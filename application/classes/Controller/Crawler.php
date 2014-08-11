@@ -14,7 +14,7 @@ class Controller_Crawler extends Controller
 
     public function before()
     {
-        $this->container = \App\DependencyInjection\ContainerSingleton::get();
+        $this->container = \App\DependencyInjection\ContainerManager::get();
     }
 
     public function action_index()

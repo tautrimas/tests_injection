@@ -4,20 +4,25 @@ namespace App\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
-class ContainerSingleton
+class ContainerManager
 {
     /**
      * @var ContainerInterface
      */
     protected static $container;
 
+    /**
+     * Prepare container
+     */
     public static function initialize()
     {
-        $container = (new ContainerConfigurator())->configure();
+        $container = ContainerFactory::create();
         static::$container = $container;
     }
 
     /**
+     * Return container
+     *
      * @return ContainerInterface
      */
     public static function get()

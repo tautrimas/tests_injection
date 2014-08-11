@@ -149,4 +149,4 @@ Cookie::$salt = 'oaikestnakoistnakosutnka';
 /** @noinspection PhpIncludeInspection */
 require APPPATH . '../vendor/autoload.php';
 
-\App\DependencyInjection\ContainerSingleton::initialize();
+\App\DependencyInjection\ContainerManager::initialize();
