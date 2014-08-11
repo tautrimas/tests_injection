@@ -4,6 +4,9 @@ namespace App\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
+/**
+ * Stores service container instance
+ */
 class ContainerManager
 {
     /**
