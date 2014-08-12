@@ -1,20 +1,27 @@
 <?php
 
-namespace tests\Integration;
+namespace tests\Functional\Controller;
 
 use Request;
 use Symfony\Component\DomCrawler\Crawler;
-use tests\IntegrationTestCase;
+use tests\FunctionalTestCase;
 
-class CrawlerTest extends IntegrationTestCase
+class CrawlerTest extends FunctionalTestCase
 {
     /**
      * {@inheritdoc}
      */
-    public function setUp()
+    protected function getTestEntries()
     {
-        parent::setUp();
-        $this->clearDatabase();
+        return array(
+            'Page' => array(
+                array(
+                    'url' => 'http://example.com',
+                    'body' => 'foo',
+                    'lang' => 'en',
+                ),
+            ),
+        );
     }
 
     /**
@@ -23,7 +30,6 @@ class CrawlerTest extends IntegrationTestCase
     public function testList()
     {
         $url = 'http://example.com';
-        $this->crawlPage($url);
 
         $request = \Request::factory('crawler/index');
         $response = $request->execute();
@@ -37,17 +43,17 @@ class CrawlerTest extends IntegrationTestCase
         $this->assertSame($url, $linkHref);
     }
 
-    /**
-     * Visit crawler page and submit the URL.
-     *
-     * @param string $url
-     */
-    protected function crawlPage($url)
-    {
-        $request = \Request::factory('crawler/crawl');
-        $request->method(Request::POST);
-        $request->body();
-        $request->post(array('url' => $url, 'save' => null));
-        $request->execute();
-    }
+//    /**
+//     * Visit crawler page and submit the URL.
+//     *
+//     * @param string $url
+//     */
+//    protected function crawlPage($url)
+//    {
+//        $request = \Request::factory('crawler/crawl');
+//        $request->method(Request::POST);
+//        $request->body();
+//        $request->post(array('url' => $url, 'save' => null));
+//        $request->execute();
+//    }
 }
