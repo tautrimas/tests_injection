@@ -4,21 +4,14 @@ php:
   - 5.3
 
 before_install:
-  - "git submodule update --init --recursive"
+  - npm install karma
 
 before_script:
-  - "pear channel-discover pear.phing.info"
-  - "pear install phing/phing"
-  - "phpenv rehash"
-  - "composer install"
+  - composer install
 
-script: "phing test"
+script:
+  - vendor/bin/phpunit -c application --coverage-text
 
-notifications:
-  irc:
-    channels:
-      - "irc.freenode.org#kohana"
-    template:
-      - "%{repository}/%{branch} (%{commit}) - %{author}: %{message}"
-      - "Build details: %{build_url}"
-  email: false
+cache:
+  directories:
+    - vendor/
