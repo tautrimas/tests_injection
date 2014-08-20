@@ -1,16 +1,16 @@
 language: php
 
 php:
-  - 5.4
+    - 5.4
 
 before_install:
 
 before_script:
-  - composer install
+    - composer install
 
 script:
-  - vendor/bin/phpunit -c application --coverage-text
+    - vendor/bin/phpunit -c application --coverage-text
 
 cache:
-  directories:
-    - vendor/
+    drectories:
+        - vendor/
