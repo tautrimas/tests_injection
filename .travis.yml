@@ -8,6 +8,7 @@ before_install:
 before_script:
     - mysql -e 'create database workshop_testing_test;'
     - echo "USE mysql;\nUPDATE user SET password=PASSWORD('rootslaptazodis') WHERE user='root';\nFLUSH PRIVILEGES;\n" | mysql -u root
+    - mysql -u root workshop_testing_test < pages.sql
     - composer install
 
 script:
