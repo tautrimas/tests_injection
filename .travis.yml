@@ -12,5 +12,5 @@ script:
     - vendor/bin/phpunit -c application --coverage-text
 
 cache:
-    drectories:
+    directories:
         - vendor/
