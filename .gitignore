@@ -5,3 +5,4 @@
 /coverage/
 
 /application/config/database.php
+/application/config/testing/database.php

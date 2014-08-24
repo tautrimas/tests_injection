@@ -19,10 +19,8 @@ return array
 			 * Ports and sockets may be appended to the hostname.
 			 */
             'dsn' => 'mysql:host=localhost;dbname=workshop_testing_test',
-//			'hostname'   => 'localhost',
-//			'database'   => 'workshop_testing',
 			'username'   => 'root',
-			'password'   => 'rootslaptazodis',
+			'password'   => 'root',
 			'persistent' => FALSE,
 		),
 		'table_prefix' => '',
