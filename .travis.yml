@@ -7,6 +7,8 @@ before_install:
     - npm install -g casperjs
 
 before_script:
+    - cp application/config/database.example.php application/config/database.php
+    - cp application/config/testing/database.example.php application/config/testing/database.php
     - mysql -e 'create database workshop_testing_test;'
     - mysql -e 'create database workshop_testing;'
     - echo "USE mysql;\nUPDATE user SET password=PASSWORD('root') WHERE user='root';\nFLUSH PRIVILEGES;\n" | mysql -u root
