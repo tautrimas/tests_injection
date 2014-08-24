@@ -3,3 +3,5 @@
 /application/logs/
 /adminer.php
 /coverage/
+
+/application/config/database.php
