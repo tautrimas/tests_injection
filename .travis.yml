@@ -9,9 +9,9 @@ before_install:
 before_script:
     - mysql -e 'create database workshop_testing_test;'
     - mysql -e 'create database workshop_testing;'
-    - echo "USE mysql;\nUPDATE user SET password=PASSWORD('rootslaptazodis') WHERE user='root';\nFLUSH PRIVILEGES;\n" | mysql -u root
-    - mysql -u root --password=rootslaptazodis workshop_testing_test < pages.sql
-    - mysql -u root --password=rootslaptazodis workshop_testing < pages.sql
+    - echo "USE mysql;\nUPDATE user SET password=PASSWORD('root') WHERE user='root';\nFLUSH PRIVILEGES;\n" | mysql -u root
+    - mysql -u root --password=root workshop_testing_test < pages.sql
+    - mysql -u root --password=root workshop_testing < pages.sql
     - composer install --prefer-dist
     - php -S localhost:8000 index.php &
     - sleep 3

@@ -22,7 +22,7 @@ return array
 //			'hostname'   => 'localhost',
 //			'database'   => 'workshop_testing',
 			'username'   => 'root',
-			'password'   => 'rootslaptazodis',
+			'password'   => 'root',
 			'persistent' => FALSE,
 		),
 		'table_prefix' => '',
