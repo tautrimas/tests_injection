@@ -4,5 +4,6 @@
 /adminer.php
 /coverage/
 
+/application/tests/Functional/Browser/parameters.js
 /application/config/database.php
 /application/config/testing/database.php
