@@ -4,7 +4,6 @@ php:
     - 5.4
 
 before_install:
-    - npm install -g phantomjs
     - npm install -g casperjs
 
 before_script:
@@ -12,10 +11,13 @@ before_script:
     - echo "USE mysql;\nUPDATE user SET password=PASSWORD('rootslaptazodis') WHERE user='root';\nFLUSH PRIVILEGES;\n" | mysql -u root
     - mysql -u root --password=rootslaptazodis workshop_testing_test < pages.sql
     - composer install
+    - php -S localhost:8000 index.php &
+    - sleep 3
+    - cp application/tests/Functional/Browser/parameters.example.js application/tests/Functional/Browser/parameters.js
 
 script:
     - vendor/bin/phpunit -c application --coverage-text
-    - casperjs test application/tests/Functional/Browser
+    - casperjs test application/tests/Functional/Browser/Test
 
 cache:
     directories:

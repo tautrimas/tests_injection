@@ -3,3 +3,5 @@
 /application/logs/
 /adminer.php
 /coverage/
+
+application/tests/Functional/Browser/parameters.js
