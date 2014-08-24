@@ -20,7 +20,7 @@ return array
 			 */
             'dsn' => 'mysql:host=localhost;dbname=workshop_testing',
 			'username'   => 'root',
-			'password'   => 'rootslaptazodis',
+			'password'   => 'root',
 			'persistent' => FALSE,
 		),
 		'table_prefix' => '',
