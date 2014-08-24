@@ -12,7 +12,7 @@ before_script:
     - echo "USE mysql;\nUPDATE user SET password=PASSWORD('rootslaptazodis') WHERE user='root';\nFLUSH PRIVILEGES;\n" | mysql -u root
     - mysql -u root --password=rootslaptazodis workshop_testing_test < pages.sql
     - mysql -u root --password=rootslaptazodis workshop_testing < pages.sql
-    - composer install
+    - composer install --prefer-dist
     - php -S localhost:8000 index.php &
     - sleep 3
     - cp application/tests/Functional/Browser/parameters.example.js application/tests/Functional/Browser/parameters.js
