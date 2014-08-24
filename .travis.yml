@@ -4,6 +4,8 @@ php:
     - 5.4
 
 before_install:
+    - npm install -g phantomjs
+    - npm install -g casperjs
 
 before_script:
     - mysql -e 'create database workshop_testing_test;'
@@ -13,6 +15,7 @@ before_script:
 
 script:
     - vendor/bin/phpunit -c application --coverage-text
+    - casperjs test application/tests/Functional/Browser
 
 cache:
     directories:
