@@ -1,7 +1,9 @@
-/vendor/
-/.idea/
-/application/logs/
-/adminer.php
+/vendor
+/.idea
+/application/logs
+/application/cache
+/default
+/.vagrant
 /coverage/
 
 /application/tests/Functional/Browser/parameters.js
