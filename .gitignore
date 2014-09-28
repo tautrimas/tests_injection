@@ -1,6 +1,7 @@
 /vendor
 /.idea
 /application/logs
+/application/cache
 /default
 /.vagrant
 
