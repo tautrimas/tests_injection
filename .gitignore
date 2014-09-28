@@ -1,6 +1,8 @@
 /vendor
 /.idea
 /application/logs
-/adminer.php
+/default
+/.vagrant
 
 /application/config/database.php
+
