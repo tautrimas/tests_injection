@@ -1,19 +1,26 @@
-# Kohana PHP Framework
+# Tests Injection workshop
 
-[Kohana](http://kohanaframework.org/) is an elegant, open source, and object oriented HMVC framework built using PHP5, by a team of volunteers. It aims to be swift, secure, and small.
+## Environment
 
-Released under a [BSD license](http://kohanaframework.org/license), Kohana can be used legally for any open source, commercial, or personal project.
+Install VirtualBox 4.3.16 from https://www.virtualbox.org/wiki/Downloads. If you already have VirtualBox, **upgrade** to this exact version or above.
 
-## Documentation
-Kohana's documentation can be found at <http://kohanaframework.org/documentation> which also contains an API browser.
+Install Vagrant 1.6.5 from https://www.vagrantup.com/downloads.html. If you already have VirtualBox, **upgrade** to this exact version or above.
 
-The `userguide` module included in all Kohana releases also allows you to view the documentation locally. Once the `userguide` module is enabled in the bootstrap, it is accessible from your site via `/index.php/guide` (or just `/guide` if you are rewriting your URLs).
+## Repository
 
-## Reporting bugs
-If you've stumbled across a bug, please help us out by [reporting the bug](http://dev.kohanaframework.org/projects/kohana3/) you have found. Simply log in or register and submit a new issue, leaving as much information about the bug as possible, e.g.
+Fork https://github.com/tautrimas/tests_injection repository.
 
-* Steps to reproduce
-* Expected result
-* Actual result
+Clone your **fork**. Let's call that project directory PROJECT.
 
-This will help us to fix the bug as quickly as possible, and if you'd like to fix it yourself feel free to [fork us on GitHub](https://github.com/kohana) and submit a pull request!
+## Launch
+
+MISSING INSTRUCTIONS ON CUSTOM VAGRANT
+
+Open terminal in PROJECT directory.
+
+Do `vagrant up`.
+
+Do `vagrant ssh -- mysql -u testsinjection --password=testsinjection testsinjection < pages.sql`.
+
+Check project at http://testsinjection.dev
+omm
