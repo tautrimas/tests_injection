@@ -23,4 +23,3 @@ Do `vagrant up`.
 Do `vagrant ssh -- mysql -u testsinjection --password=testsinjection testsinjection < pages.sql`.
 
 Check project at http://testsinjection.dev
-omm
