@@ -21,7 +21,7 @@ before_script:
 
 script:
     - vendor/bin/phpunit -c application --coverage-text
-    - casperjs test application/tests/Functional/Browser/Test
+    - casperjs test application/tests/Functional/Browser/Crawler
 
 cache:
     directories:
