@@ -14,12 +14,12 @@ Clone your **fork**. Let's call that project directory PROJECT.
 
 ## Launch
 
-MISSING INSTRUCTIONS ON CUSTOM VAGRANT
+> MISSING INSTRUCTIONS ON CUSTOM VAGRANT
 
 Open terminal in PROJECT directory.
 
-Do `vagrant up`.
+Do `vagrant up` (will take 5 - 10 minutes to finish).
 
 Do `vagrant ssh -- mysql -u testsinjection --password=testsinjection testsinjection < pages.sql`.
 
-Check project at http://testsinjection.dev
+Check project at http://testsinjection.dev.
